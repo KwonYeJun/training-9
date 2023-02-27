@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KimJiseop</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+  </div>
+  <script>
+
+    let root = document.getElementById('root');
+
+    let firstDiv = document.createElement('div');
+    root.appendChild(firstDiv);
+    let secondDiv = document.createElement('div');
+    root.appendChild(secondDiv);
+    let thirdDiv = document.createElement('div');
+    root.appendChild(thirdDiv);
+
+    function rootFunc() {
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      root.style.backgroundColor = "cadetblue";
+      root.style.display = "flex";
+      root.style.justifyContent = "center";
+      root.style.alignItems = "center";
+      root.style.position = "relative";
+    }
+
+    function firstFunc(firstDiv) {
+      firstDiv.style.width = "300px";
+      firstDiv.style.height = "300px";
+      firstDiv.style.marginTop = "300px";
+      firstDiv.style.marginLeft = "300px";
+      firstDiv.style.backgroundColor = "salmon";
+      firstDiv.style.filter = "blur(20px)";
+    }
+
+    function secondFunc(secondDiv) {
+      secondDiv.style.width = "300px";
+      secondDiv.style.height = "300px";
+      secondDiv.style.marginTop =  "50px";
+      secondDiv.style.marginLeft = "-50px";
+      secondDiv.style.backgroundColor = "cornflowerblue";
+      secondDiv.style.filter = "blur(20px)";
+    }
+
+    function thirdFunc(thirdDiv) {
+      thirdDiv.style.width = "300px";
+      thirdDiv.style.height = "300px";
+      thirdDiv.style.marginTop = "100px";
+      thirdDiv.style.marginLeft = "50px";
+      thirdDiv.style.backgroundColor = "coral";
+      thirdDiv.style.filter = "blur(10px)";
+    }
+
+    function elementFunc() {
+      
+    }
+
+    rootFunc();
+    firstFunc(firstDiv);
+    secondFunc(secondDiv);
+    thirdFunc(thirdDiv);
+
+  </script>
+</body>
+
+</html>
