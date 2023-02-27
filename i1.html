@@ -26,19 +26,15 @@
 
     let counter = 0;
 
-    let list = nameDiv("One", "Two", "Three", "div");
+    let list = nameDiv("rd","fch","One", "Two", "Three", "div");
 
     function nameDiv(a, b, c, d) {
 
 
 
-      
+
     }
 
-    
-
-    console.log(root);
-    console.log(firstdiv.children[0]);
 
     function rdiv(rd) {
       rd.style.width = "100vw";
@@ -92,6 +88,10 @@
 
     }
 
+    console.log(root);
+    console.log(firstdiv.children[0]);
+
+
     rdiv(root);
     fdiv(firstdiv);
     divOne(One);
@@ -107,22 +107,16 @@
     let list_color = ["red", "blue", "green", "yellow"];
 
     function ccolor() {
-
-      for (let i = 0; i < list_color.length; i++) {
-        Two.style.backgroundColor = list_color[counter];
-      }
-
-      if (counter >= list_color.length) {
+      Two.style.backgroundColor = list_color[counter]; //배경색을 리스트 컬러 배열에 카운트 만큼해서 출력 한다.
+      ++counter; //카운트를 증가 시킨다
+      if (counter === list_color.length) {
         counter = 0;
       }
-
     }
-
-
     console.dir(root.style);
 
-    One.addEventListener("click", ccolor);
 
+    One.addEventListener("click", ccolor); //클릭시 ccolor함수를 호출 한다.
 
 
 
