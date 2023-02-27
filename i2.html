@@ -12,6 +12,27 @@
   <div id="root"></div>
   <script>
 
+    let dataForm = dataFunc("root", "div", "div", "div", "div", "div");
+
+    let root = dataForm.parent;
+    let div = dataForm.child;
+    let divone = dataForm.childone;
+    let divtwo = dataForm.childtwo;
+    let divthree = dataForm.childthree;
+
+    rootstyle("root");
+    divstyle("div");
+    divonestyle("divone");
+    divtwostyle("divtwo");
+    divthreestyle("divthree");
+
+    root.appendChild(div);
+    div.appendChild(divone);
+    div.appendChild(divtwo);
+    div.appendChild(divthree);
+
+    console.dir(root.style);
+
     function dataFunc(a, b, c, d, e) {
       let obj = {
         parent: document.getElementById(a),
@@ -22,27 +43,6 @@
       }
       return obj;
     }
-    let dataForm = dataFunc("root", "div", "div", "div", "div", "div");
-
-    let root = dataForm.parent;
-    let div = dataForm.child;
-    let divone = dataForm.childone;
-    let divtwo = dataForm.childtwo;
-    let divthree = dataForm.childthree;
-
-    root.appendChild(div);
-    div.appendChild(divone);
-    div.appendChild(divtwo);
-    div.appendChild(divthree);
-
-    rootstyle("root");
-    divstyle("div");
-    divonestyle("divone");
-    divtwostyle("divtwo");
-    divthreestyle("divthree");
-
-    console.dir(root.style);
-
 
     function rootstyle() {
       root.style.width = "100vw";
@@ -59,7 +59,7 @@
       div.style.height = "500px";
       div.style.borderRadius = "500px";
       div.style.opacity = "0.8";
-      div.position = "absolute";
+      div.style.position = "absolute";
     }
     function divonestyle() {
       divone.style.borderRadius = "250px";
