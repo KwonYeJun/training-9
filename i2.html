@@ -11,9 +11,10 @@
 <body>
   <div id="root"></div>
   <script>
-    function dataFunc(a,b,c,d,e) {
+
+    function dataFunc(a, b, c, d, e) {
       let obj = {
-        parent: document.querySelector(a),
+        parent: document.getElementById(a),
         child: document.createElement(b),
         childone: document.createElement(c),
         childtwo: document.createElement(d),
@@ -21,24 +22,72 @@
       }
       return obj;
     }
-    let dataForm = dataFunc("#root", "div", "div", "div", "div", "div");
-    /*let root = document.querySelector("#root");
-    let div = document.createElement("div");
-    let divone = document.createElement("div");
-    let divtwo = document.createElement("div");
-    let divthree = document.createElement("div");
-*/
+    let dataForm = dataFunc("root", "div", "div", "div", "div", "div");
+
     let root = dataForm.parent;
     let div = dataForm.child;
-    root.appendChild(div);
     let divone = dataForm.childone;
-    div.appendChild(divone);
     let divtwo = dataForm.childtwo;
-    div.appendChild(divtwo);
     let divthree = dataForm.childthree;
+
+    root.appendChild(div);
+    div.appendChild(divone);
+    div.appendChild(divtwo);
     div.appendChild(divthree);
 
+    rootstyle("root");
+    divstyle("div");
+    divonestyle("divone");
+    divtwostyle("divtwo");
+    divthreestyle("divthree");
 
+    console.dir(root.style);
+
+
+    function rootstyle() {
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      root.style.backgroundColor = "cadetblue";
+      root.style.display = "flex";
+      root.style.justifyContent = "center";
+      root.style.alignItems = "center";
+      root.style.position = "relative";
+    }
+
+    function divstyle() {
+      div.style.width = "500px";
+      div.style.height = "500px";
+      div.style.borderRadius = "500px";
+      div.style.opacity = "0.8";
+      div.position = "absolute";
+    }
+    function divonestyle() {
+      divone.style.borderRadius = "250px";
+      divone.style.width = "200px";
+      divone.style.height = "200px";
+      divone.style.marginTop = "300px";
+      divone.style.marginLeft = "300px";
+      divone.style.backgroundColor = "salmon";
+      divone.style.filter = "blur(10px)"
+    }
+
+    function divtwostyle() {
+      divtwo.style.width = "100px";
+      divtwo.style.height = "100px";
+      divtwo.style.marginTop = "50px";
+      divtwo.style.marginLeft = "-50px";
+      divtwo.style.backgroundColor = "cornflowerblue";
+      divtwo.style.filter = "blur(20px)"
+    }
+
+    function divthreestyle() {
+      divthree.style.width = "100px";
+      divthree.style.height = "100px";
+      divthree.style.marginTop = "100px";
+      divthree.style.marginLeft = "50px";
+      divthree.style.backgroundColor = "coral";
+      divthree.style.filter = "blur(10px)"
+    }
 
   </script>
 </body>
