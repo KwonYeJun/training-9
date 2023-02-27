@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+
+  </div>
+
+  <script>
+
+
+    let root = document.getElementById("root");
+    let firstdiv = document.createElement("div");
+    root.appendChild(firstdiv);
+
+    let One = document.createElement("div");
+    let Two = document.createElement("div");
+    let Three = document.createElement("div");
+
+    let counter = 0;
+
+    let list = nameDiv("One", "Two", "Three", "div");
+
+    function nameDiv(a, b, c, d) {
+
+
+
+      
+    }
+
+    
+
+    console.log(root);
+    console.log(firstdiv.children[0]);
+
+    function rdiv(rd) {
+      rd.style.width = "100vw";
+      rd.style.height = "100vh";
+      rd.style.backgroundColor = "cadetblue";
+      rd.style.display = "flex";
+      rd.style.justifyContent = "center";
+      rd.style.alignItems = "center";
+      rd.style.position = "relative";
+
+    }
+    function fdiv(fch) {
+
+      fch.style.width = "500px";
+      fch.style.height = "500px";
+      fch.style.borderRadius = "250px";
+      fch.style.opacity = "0.8";
+      fch.style.position = "absolute";
+
+
+    }
+
+    function divOne(one) {
+      one.style.width = "100px";
+
+      one.style.height = "100px";
+      one.style.marginTop = "300px";
+      one.style.marginLeft = "300px";
+      one.style.backgroundColor = "salmon";
+      one.style.filter = "blur(20px)";
+
+    }
+
+    function divTwo(two) {
+      two.style.width = "100px";
+
+      two.style.height = "100px";
+      two.style.marginTop = "50px";
+      two.style.marginLeft = "-50px";
+      two.style.backgroundColor = "cornflowerblue";
+      two.style.filter = "blur(20px)";
+    }
+
+    function divThree(three) {
+      three.style.width = "100px";
+      three.style.height = "100px";
+      three.style.marginTop = "100px";
+      three.style.marginLeft = "50px";
+      three.style.backgroundColor = "coral";
+      three.style.filter = "blur(20px)";
+
+    }
+
+    rdiv(root);
+    fdiv(firstdiv);
+    divOne(One);
+    divTwo(Two);
+    divThree(Three);
+
+
+    firstdiv.appendChild(One);
+    firstdiv.appendChild(Two);
+
+    firstdiv.appendChild(Three);
+
+    let list_color = ["red", "blue", "green", "yellow"];
+
+    function ccolor() {
+
+      for (let i = 0; i < list_color.length; i++) {
+        Two.style.backgroundColor = list_color[counter];
+      }
+
+      if (counter >= list_color.length) {
+        counter = 0;
+      }
+
+    }
+
+
+    console.dir(root.style);
+
+    One.addEventListener("click", ccolor);
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
